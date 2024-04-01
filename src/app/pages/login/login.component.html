@@ -1,0 +1,15 @@
+<div class="login-page">
+    <div class="login-container">
+        <h1>YourCollection</h1>
+        <span class="formName">Login</span>
+        <form>
+            <label for="email">Email:</label>
+            <input type="email" name="email" id="email" [(ngModel)]="email">
+    
+            <label for="password">Password:</label>
+            <input type="password" name="password" id="password" [(ngModel)]="password">
+        </form>
+        <button (click)="login()">Let's Go!</button>
+        <span class="changeForm">Do you not have an account? <span routerLink="registration">Register!</span></span>
+    </div>
+</div>

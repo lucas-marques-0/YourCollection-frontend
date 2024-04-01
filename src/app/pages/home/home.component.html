@@ -1,0 +1,33 @@
+<app-navbar></app-navbar>
+<div class="home-page">
+    <div class="top-page">
+        <h1>Welcome {{username}}, these are your collections!</h1>
+        <div class="top-page-btn">
+            <button (click)="addCollection()">Add Collection</button>
+            <button routerLink="/search-page">Search Page</button>
+        </div>
+    </div>
+    <div class="bottom-page">
+        <div *ngIf="collections && collections.length > 0" class="collections-grid">
+            <div *ngFor="let collection of collections; let i = index" class="collection-card">
+                <div class="card" *ngIf="!editMode[i]">
+                    <div class="card-text">{{ collection.name }}</div>
+                    <div class="button-container">
+                        <button class="btn-card btn-green" (click)="toggleEdit(i)">Edit</button>
+                        <button class="btn-card btn-red" (click)="removeCollection(collection.id)">Remove</button>
+                    </div>
+                    <button class="btn-card btn-olive" (click)="viewCollection(collection.id)">View!</button>
+                </div>
+                <div class="card" *ngIf="editMode[i]">
+                    <input type="text" [(ngModel)]="collection.name">
+                    <div class="button-container">
+                        <button class="btn-card btn-green" (click)="editCollectionName(i, collection.name)">Save</button>
+                        <button  class="btn-card btn-red" (click)="removeCollection(collection.id)">Remove</button>
+                    </div>
+                    <button class="btn-card btn-olive" (click)="viewCollection(collection.id)">View!</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<app-footer></app-footer>

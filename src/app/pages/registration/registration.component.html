@@ -1,0 +1,18 @@
+<div class="registration-page">
+    <div class="registration-container">
+        <h1>YourCollection</h1>
+        <span class="formName">Registration</span>
+        <form>
+            <label for="username">Usuário:</label>
+            <input type="text" name="username" id="username" [(ngModel)]="username">
+    
+            <label for="email">Email:</label>
+            <input type="email" name="email" id="email" [(ngModel)]="email">
+
+            <label for="password">Password:</label>
+            <input type="password" name="password" id="password" [(ngModel)]="password">
+        </form>
+        <button (click)="registration()">Let's Go!</button>
+        <span class="changeForm">Do you already have an account? <span routerLink="">Log in!</span></span>
+    </div>
+</div>

@@ -1,0 +1,113 @@
+.home-page { 
+    min-height: calc(100vh - 70px);
+    background-color: #EFEFF1;
+    padding-bottom: 70px;
+}
+
+.top-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #CBE5E0;
+    gap: 30px;
+    padding: 20px;
+    color: #396E64;
+}
+
+.top-page button {
+    background-color: #4CA27E;
+    color: #ffffff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 7px;
+    cursor: pointer;
+    transition: 0.5s;
+    border: 1px solid #000000;
+}
+
+.top-page-btn {
+    display: flex;
+    gap: 30px;
+}
+
+.top-page button:hover {
+    background-color: #396E64;
+}
+
+.bottom-page {
+    margin: 0 auto;
+    max-width: 90vw;
+}
+
+.collections-grid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, max(250px));
+    gap: 20px;
+    margin-top: 50px;
+    justify-content: center;
+    align-items: center;
+}
+
+.collection-card {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #CBE5E0;
+    border: 1px solid #396E64;
+    padding: 20px;
+    border-radius: 15px;
+}
+
+.card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+}
+
+.card button {
+    transition: .3s;
+}
+
+.card button:hover {
+    opacity: 0.8;
+}
+
+.card-text {
+    white-space: nowrap;
+    overflow: hidden; 
+    text-overflow: ellipsis;
+    text-align: center; 
+    width: 100%; 
+}
+
+.btn-card {
+    padding: 5px 15px;
+    border-radius: 15px;
+    border: none;
+    cursor: pointer;
+    color: #ffffff;
+}
+
+.button-container {
+    display: flex;
+    gap: 10px;
+}
+
+.btn-green {
+    background-color: #396E64;
+}
+
+.btn-red {
+    background-color: #db4d4d;
+}
+
+.btn-olive {
+    background-color: #4CA27E;
+}
+
