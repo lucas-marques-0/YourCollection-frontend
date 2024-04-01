@@ -9,7 +9,7 @@ export class NavbarService {
 
   async signOut(): Promise<any> {
     try {
-      return await this.http.post('http://localhost:3000/signout', {}).toPromise();
+      return await this.http.post('https://yourcollection-backend.onrender.com/signout', {}).toPromise();
     } catch (error) {
       console.error('Erro ao buscar usuários:', error);
     }

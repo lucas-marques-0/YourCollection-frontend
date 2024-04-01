@@ -9,7 +9,7 @@ export class RegistrationService {
 
   async registerUser(userObject: object): Promise<any> {
     try {
-      return await this.http.post('http://localhost:3000/registration', userObject).toPromise();
+      return await this.http.post('https://yourcollection-backend.onrender.com/registration', userObject).toPromise();
     } catch {
       return false;
     }

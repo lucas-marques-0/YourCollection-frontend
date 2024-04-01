@@ -9,7 +9,7 @@ export class CollectionService {
 
   async verifySession(): Promise<any> {
     try {
-      return await this.http.get('http://localhost:3000/verifySession').toPromise();
+      return await this.http.get('https://yourcollection-backend.onrender.com/verifySession').toPromise();
     } catch (error) {
       console.error('Erro ao buscar usuários:', error);
     }
@@ -17,7 +17,7 @@ export class CollectionService {
 
   async updateUserCollections(updatedCollections: any): Promise<any> {
     try {
-      return await this.http.put('http://localhost:3000/updateUserCollections', { collections: updatedCollections }).toPromise();
+      return await this.http.put('https://yourcollection-backend.onrender.com/updateUserCollections', { collections: updatedCollections }).toPromise();
     } catch (error) {
       console.error('Erro ao adicionar coleção do usuário:', error);
     }
