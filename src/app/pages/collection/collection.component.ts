@@ -28,6 +28,7 @@ export class CollectionComponent implements OnInit {
     this.allCollections = verifySession.session.user.user_metadata.collections;
     const collectionObj = this.allCollections.filter((collection: any) => collection.id == id);
     this.pageCollection = collectionObj[0].collection;
+    console.log(this.pageCollection)
     this.collectionName = collectionObj[0].name;
   }
 
