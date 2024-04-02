@@ -15,6 +15,7 @@ export class CollectionComponent implements OnInit {
   collectionName: any;
   allCollections: any;
   pageCollection: any;
+  pageCollectionGames: any;
 
   ngOnInit(): void {
     this.collectionID = this.route.snapshot.paramMap.get('id');
@@ -28,7 +29,7 @@ export class CollectionComponent implements OnInit {
     this.allCollections = verifySession.session.user.user_metadata.collections;
     const collectionObj = this.allCollections.filter((collection: any) => collection.id == id);
     this.pageCollection = collectionObj[0].collection;
-    console.log(this.pageCollection)
+    this.getGameInfos(this.pageCollection);
     this.collectionName = collectionObj[0].name;
   }
 
@@ -44,14 +45,11 @@ export class CollectionComponent implements OnInit {
     this.updateUserCollections();
   }
 
-  async getGameImage(gameID: any) {
-    const gameObj = await this.collectionService.getGameInfos(gameID);
-    return gameObj.background_image;
-  }
-
-  async getGameName(gameID: any) {
-    const gameObj = await this.collectionService.getGameInfos(gameID);
-    return gameObj.name;
+  async getGameInfos(collection: any) {
+    for(let gameID in collection) {
+      const gameObj = await this.collectionService.getGameInfos(gameID);
+      this.pageCollectionGames.push(gameObj)
+    }
   }
 
   async updateUserCollections() {

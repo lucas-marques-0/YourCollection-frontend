@@ -4,10 +4,10 @@
         <h2 class="collection-name">Showing items from collection <span>{{ collectionName }}</span>!</h2>
     </div>
     <div class="game-grid">
-        <div *ngFor="let gameID of pageCollection" class="game-card">
-            <img [src]="getGameImage(gameID)" alt="game-image">
-            <p>{{getGameName(gameID)}}</p>
-            <button class="add-button" (click)="removeGame(gameID)">-</button>
+        <div *ngFor="let game of pageCollectionGames" class="game-card">
+            <img [src]="game.name" alt="game-image">
+            <p>{{game.background_image}}</p>
+            <button class="add-button" (click)="removeGame(game.id)">-</button>
         </div>
     </div>
 </div>
