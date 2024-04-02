@@ -13,7 +13,7 @@ export class NavbarComponent {
   async signOut() {
     const signOut = await this.navbarService.signOut()
     if(signOut.success) {
-      localStorage.clear();
+      await localStorage.clear();
       this.router.navigate(['']);
     }
   }

@@ -29,7 +29,7 @@ export class SearchPageComponent implements OnInit {
 
   openAddPage(game:any) {
     this.searchPageContainer = true;
-    this.gameID = game;
+    this.gameID = game.id;
   }
 
   addGame() {
