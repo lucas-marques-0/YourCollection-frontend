@@ -7,6 +7,9 @@ import { HttpClient } from '@angular/common/http';
 export class CollectionService {
   constructor(private http: HttpClient) { }
 
+  private apiKey = 'e098547341a847d89c8b669a72f6f6f3';
+  private apiUrl = 'https://api.rawg.io/api/games';
+
   async verifySession(): Promise<any> {
     try {
       return await this.http.get('https://yourcollection-backend.onrender.com/verifySession').toPromise();
@@ -25,7 +28,7 @@ export class CollectionService {
 
   async getGameInfos(id: any): Promise<any> {
     try {
-      return await this.http.get(`https://api.rawg.io/api/games/${id}`).toPromise();
+      return await this.http.get(`${this.apiUrl}/${id}?key=${this.apiKey}`).toPromise();
     } catch(error) {
       console.error('Erro ao buscar informações do game:', error);
     }
