@@ -24,6 +24,7 @@ export class CollectionComponent implements OnInit {
   async getCollectionData(id: string) {
     const verifySession = await this.collectionService.verifySession();
     if(verifySession.session == null) this.router.navigate(['']);
+
     this.allCollections = verifySession.session.user.user_metadata.collections;
     const collectionObj = this.allCollections.filter((collection: any) => collection.id == id);
     this.pageCollection = collectionObj[0].collection;
@@ -40,6 +41,16 @@ export class CollectionComponent implements OnInit {
     });
     this.allCollections = updatedCollections;
     this.updateUserCollections();
+  }
+
+  async getGameImage(gameID: any) {
+    const gameObj = await this.collectionService.getGameInfos(gameID);
+    return gameObj.background_image;
+  }
+
+  async getGameName(gameID: any) {
+    const gameObj = await this.collectionService.getGameInfos(gameID);
+    return gameObj.name;
   }
 
   async updateUserCollections() {

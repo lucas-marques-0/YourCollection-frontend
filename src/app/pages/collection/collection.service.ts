@@ -22,4 +22,12 @@ export class CollectionService {
       console.error('Erro ao adicionar coleção do usuário:', error);
     }
   }
+
+  async getGameInfos(id: any): Promise<any> {
+    try {
+      return await this.http.get(`https://api.rawg.io/api/games/${id}`).toPromise();
+    } catch(error) {
+      console.error('Erro ao buscar informações do game:', error);
+    }
+  }
 }
