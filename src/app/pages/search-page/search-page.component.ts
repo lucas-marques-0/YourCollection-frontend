@@ -36,7 +36,7 @@ export class SearchPageComponent implements OnInit {
     if (!this.selectedCollection) this.showAlert('Please, choose a collection.', 'error')
     else {
       const collectionObj = this.collectionList.filter((collection: any) => collection.id === this.selectedCollection);
-      collectionObj[0].collection.push((this.gameID).toString());
+      collectionObj[0].collection.push(this.gameID);
       this.updateUserCollections();
       this.searchPageContainer = false;
     }
