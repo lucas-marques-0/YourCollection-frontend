@@ -15,7 +15,7 @@ export class CollectionComponent implements OnInit {
   collectionName: any;
   allCollections: any;
   pageCollection: any;
-  pageCollectionGames: any;
+  pageCollectionGames: any = [];
 
   ngOnInit(): void {
     this.collectionID = this.route.snapshot.paramMap.get('id');
