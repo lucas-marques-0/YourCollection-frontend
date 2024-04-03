@@ -15,7 +15,7 @@ export class CollectionComponent implements OnInit {
   collectionName: any;
   allCollections: any;
   pageCollection: any;
-  pageCollectionGames: any;
+  pageCollectionGames: any = [];
 
   ngOnInit(): void {
     this.collectionID = this.route.snapshot.paramMap.get('id');
@@ -46,8 +46,10 @@ export class CollectionComponent implements OnInit {
   }
 
   async getGameInfos(collection: any) {
+    console.log(collection)
     for(let gameID of collection) {
       const gameObj = await this.collectionService.getGameInfos(gameID);
+      console.log(gameObj)
       this.pageCollectionGames.push(gameObj)
     }
   }
