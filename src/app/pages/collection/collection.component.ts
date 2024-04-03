@@ -34,10 +34,10 @@ export class CollectionComponent implements OnInit {
   }
 
   removeGame(gameID: any) {
-    this.pageCollection = this.pageCollection.filter((collection: any) => collection.id !== gameID);
+    this.pageCollectionGames = this.pageCollectionGames.filter((collection: any) => collection.id !== gameID);
     const updatedCollections = this.allCollections.map((collection: any) => {
       if (collection.id === this.collectionID) {
-        return { ...collection, collection: this.pageCollection };
+        return { ...collection, collection: this.pageCollectionGames };
       }
       return collection;
     });
