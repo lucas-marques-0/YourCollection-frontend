@@ -5,8 +5,8 @@
     </div>
     <div class="game-grid">
         <div *ngFor="let game of pageCollectionGames" class="game-card">
-            <img [src]="game.name" alt="game-image">
-            <p>{{game.background_image}}</p>
+            <img [src]="game.background_image" alt="game-image">
+            <p>{{game.name}}</p>
             <button class="add-button" (click)="removeGame(game.id)">-</button>
         </div>
     </div>
