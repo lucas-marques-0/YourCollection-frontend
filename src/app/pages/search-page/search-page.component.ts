@@ -27,9 +27,9 @@ export class SearchPageComponent implements OnInit {
     this.searchResults = getResults.results;
   }
 
-  openAddPage(game:any) {
+  openAddPage(gameID:any) {
     this.searchPageContainer = true;
-    this.gameID = game.id;
+    this.gameID = gameID;
   }
 
   addGame() {

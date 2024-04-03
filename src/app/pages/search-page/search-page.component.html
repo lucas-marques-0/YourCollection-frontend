@@ -8,7 +8,7 @@
         <div *ngFor="let game of searchResults" class="game-card">
             <img src={{game.background_image}} alt="game-image">
             <p>{{ game.name }}</p>
-            <button class="add-button" (click)="openAddPage(game)">+</button>
+            <button class="add-button" (click)="openAddPage(game.id)">+</button>
         </div>
     </div>
 </div>
