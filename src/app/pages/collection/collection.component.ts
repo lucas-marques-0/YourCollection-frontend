@@ -34,22 +34,15 @@ export class CollectionComponent implements OnInit {
   }
 
   removeGame(gameID: any) {
-    this.pageCollectionGames = this.pageCollectionGames.filter((collection: any) => collection.id !== gameID);
-    const updatedCollections = this.allCollections.map((collection: any) => {
-      if (collection.id === this.collectionID) {
-        return { ...collection, collection: this.pageCollectionGames };
-      }
-      return collection;
-    });
-    this.allCollections = updatedCollections;
+    this.pageCollectionGames = this.pageCollectionGames.filter((id: any) => id !== gameID);
+    this.pageCollection = this.pageCollection.filter((id: any) => id !== gameID);
+    this.allCollections = this.pageCollection;
     this.updateUserCollections();
   }
 
   async getGameInfos(collection: any) {
-    console.log(collection)
     for(let gameID of collection) {
       const gameObj = await this.collectionService.getGameInfos(gameID);
-      console.log(gameObj)
       this.pageCollectionGames.push(gameObj)
     }
   }
