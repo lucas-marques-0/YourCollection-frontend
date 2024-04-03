@@ -46,6 +46,7 @@ export class CollectionComponent implements OnInit {
   }
 
   async getGameInfos(collection: any) {
+    console.log(collection)
     for(let gameID in collection) {
       const gameObj = await this.collectionService.getGameInfos(gameID);
       this.pageCollectionGames.push(gameObj)
