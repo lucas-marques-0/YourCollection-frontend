@@ -11,22 +11,22 @@ import { Router } from '@angular/router';
 export class CollectionComponent implements OnInit {
   constructor(private collectionService: CollectionService, private route: ActivatedRoute, private router: Router) { }
 
+  sessionObject: any;
   collectionID: any;
   collectionName: any;
   allCollections: any;
   pageCollection: any;
   pageCollectionGames: any = [];
 
-  ngOnInit(): void {
+  async ngOnInit() {
+    this.sessionObject = await this.collectionService.verifySession();
+    if(this.sessionObject.session == null) this.router.navigate(['']);
     this.collectionID = this.route.snapshot.paramMap.get('id');
     this.getCollectionData(this.collectionID);
   }
 
   async getCollectionData(id: string) {
-    const verifySession = await this.collectionService.verifySession();
-    if(verifySession.session == null) this.router.navigate(['']);
-
-    this.allCollections = verifySession.session.user.user_metadata.collections;
+    this.allCollections = this.sessionObject.session.user.user_metadata.collections;
     const collectionObj = this.allCollections.filter((collection: any) => collection.id == id);
     this.pageCollection = collectionObj[0].collection;
     this.getGameInfos(this.pageCollection);
@@ -46,10 +46,8 @@ export class CollectionComponent implements OnInit {
   }
 
   async getGameInfos(collection: any) {
-    console.log(collection)
     for(let gameID of collection) {
       const gameObj = await this.collectionService.getGameInfos(gameID);
-      console.log(gameObj)
       this.pageCollectionGames.push(gameObj)
     }
   }
