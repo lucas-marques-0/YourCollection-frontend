@@ -34,9 +34,9 @@ export class CollectionComponent implements OnInit {
   }
 
   removeGame(gameID: any) {
-    this.pageCollectionGames = this.pageCollectionGames.filter((game: any) => game.id.toString() !== gameID.toString());
-    this.pageCollection = this.pageCollection.filter((id: any) => id !== gameID.toString());
-    console.log(this.pageCollectionGames, this.pageCollection)
+    this.pageCollectionGames = this.pageCollectionGames.filter((game: any) => game.id !== gameID);
+    this.pageCollection = this.pageCollection.filter((id: any) => id !== gameID);
+    console.log(this.pageCollectionGames, this.pageCollection, this.allCollections)
     this.updateUserCollections();
   }
 
