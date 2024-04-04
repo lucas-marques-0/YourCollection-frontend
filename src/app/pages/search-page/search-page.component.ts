@@ -28,9 +28,11 @@ export class SearchPageComponent implements OnInit {
   }
 
   openAddPage(gameID: any) {
-    console.log(this.collectionList)
-    this.searchPageContainer = true;
-    this.gameID = gameID;
+    if(this.collectionList.lenght <= 0) this.showAlert('Create a collection first.', 'error')
+    else {
+      this.searchPageContainer = true;
+      this.gameID = gameID;
+    }
   }
 
   addGame() {
