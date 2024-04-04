@@ -28,6 +28,7 @@ export class SearchPageComponent implements OnInit {
   }
 
   openAddPage(gameID: any) {
+    console.log(this.collectionList)
     this.searchPageContainer = true;
     this.gameID = gameID;
   }
