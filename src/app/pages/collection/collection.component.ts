@@ -29,17 +29,14 @@ export class CollectionComponent implements OnInit {
     this.allCollections = verifySession.session.user.user_metadata.collections;
     const collectionObj = this.allCollections.filter((collection: any) => collection.id == id);
     this.pageCollection = collectionObj[0].collection;
-    this.getGameInfos(this.pageCollection);
     this.collectionName = collectionObj[0].name;
+    this.getGameInfos(this.pageCollection);
   }
 
   removeGame(gameID: any) {
-    console.log(gameID.toString())
-    console.log(this.pageCollectionGames, this.pageCollection)
-    this.pageCollectionGames = this.pageCollectionGames.filter((game: any) => game.id !== gameID.toString());
+    this.pageCollectionGames = this.pageCollectionGames.filter((game: any) => game.id.toString() !== gameID.toString());
     this.pageCollection = this.pageCollection.filter((id: any) => id !== gameID.toString());
     console.log(this.pageCollectionGames, this.pageCollection)
-    this.allCollections = this.pageCollection;
     this.updateUserCollections();
   }
 
