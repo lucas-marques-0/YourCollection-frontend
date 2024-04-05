@@ -1,27 +1,15 @@
-# YourcollectionFrontend
+# YourCollection [Front-end]
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.9.
+![1](https://github.com/lucas-marques-0/YourCollection-frontend/assets/111307314/e4f1a409-e72e-4ef0-b576-86735bf52e0b)
 
-## Development server
+# Crie coleções para organizar os seus jogos...
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+![2](https://github.com/lucas-marques-0/YourCollection-frontend/assets/111307314/7a4b07eb-464f-413c-a21b-6c6f07395d4b)
 
-## Code scaffolding
+# Adicione qualquer game a elas!
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+![3](https://github.com/lucas-marques-0/YourCollection-frontend/assets/111307314/9d9889e0-2d49-4067-8688-37eeda0250fb)
 
-## Build
+# Experimente agora!
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+site: https://your-collection.vercel.app
