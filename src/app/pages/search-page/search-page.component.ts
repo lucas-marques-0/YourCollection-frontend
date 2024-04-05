@@ -28,8 +28,7 @@ export class SearchPageComponent implements OnInit {
   }
 
   openAddPage(gameID: any) {
-    console.log(this.collectionList.lenght, this.collectionList)
-    if(this.collectionList.lenght <= 0) this.showAlert('Create a collection first.', 'error')
+    if(this.collectionList.length <= 0) this.showAlert('Create a collection first.', 'error')
     else {
       this.searchPageContainer = true;
       this.gameID = gameID;
